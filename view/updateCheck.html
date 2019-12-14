@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../common/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="../common/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>金箔サイト 管理者画面</title>
+</head>
+<body>
+    <h1>商品の更新確認</h1>
+    <h2>商品情報</h2>
+
+    <form action="update.php" method="post">
+      
+        <table class="searchTbl">
+            <tr>
+                <th>ID</th>
+                <td>
+                    <?= $sItemId ?>
+                    <input type="hidden" name="id" value="<?= $sItemId ?>">
+                </td>
+            </tr>
+            <tr>
+                <th>商品名</th>
+                <td>
+                    <?= $sName ?>
+                    <input type="hidden" name="name" value="<?= $sName ?>">
+                </td>
+            </tr>
+            <tr>
+                <th>価格</th>
+                <td>
+                    <?= $sPrice ?>
+                    <input type="hidden" name="price" value="<?= $sPrice ?>">
+                </td>
+            </tr>
+            <tr>
+                <th>在庫</th>
+                <td>
+                    <?= $sInventory ?>
+                    <input type="hidden" name="inventory" value="<?= $sInventory ?>">
+                </td>
+            </tr>
+            <tr>
+                <th>タグ</th>
+                <td>
+                    <?= $sTag ?>
+                    <input type="hidden" name="tag" value="<?= $sTag ?>">
+                </td>
+            </tr>
+        </table>
+
+        <div class="btnArea clearfix">
+            <input type="button" class="btn" value="修正" onclick="javascript:history.back();">
+            <input type="submit" class="btn" value="更新">
+            <input type="hidden" name="step" value="2" />
+        </div>
+    </form>
+
+    <a href="index.php">トップページへ戻る</a><br />
+
+</body>
+</html>

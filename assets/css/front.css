@@ -1,0 +1,136 @@
+
+/*#top--img{*/
+/*    position:absolute;*/
+/*    top:0;*/
+/*    left:0;*/
+/*    z-index:-1;*/
+    /*margin-top: -110px;*/
+/*}*/
+
+.navbar-toggle {
+    z-index: 2;
+}
+
+.navbar-brand-center {
+    position: absolute;
+    width: 100%;
+    left: 0.5%;
+    top: 0;
+    text-align:center;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    
+    .navbar-brand-center {
+        margin-left: 0 !important;
+    }
+}
+
+.nav-item{
+    color :skyblue;
+}
+
+.mr-10{
+    margin-right:100px;
+}
+
+.h7{
+    font-size: 0.8rem;
+}
+
+.navbar-brand{
+    font-family: "Renner*";
+     z-index:5;
+}
+
+
+
+.text-decoration-none{
+    text-decoration: none;
+}
+
+#nav{
+    position:fixed;
+    width:100%;
+    background: linear-gradient( rgba(34, 34, 34, 0.8),rgba(0, 0, 0, 0));
+    transition: background-color 250ms;
+
+}
+
+.nav--wrapper:hover > #nav{
+    transition: background-color 250ms;
+}
+
+
+.nav--ul{
+    padding-top:43px;
+    z-index: 2;
+}
+
+
+
+.nav--icon{
+    position:absolute;
+    top:25px;
+    left:87%;
+    font-size:1.3em;
+    
+    z-index: 2;
+}
+
+.active a{
+    opacity:0.8;
+    transition:opacity 100ms;
+}
+
+.active a:hover{
+    opacity:1;
+    transition:opacity 100ms;
+}
+
+.nav--icon a{
+    opacity:0.8;
+    transition:opacity 100ms;
+}
+
+.nav--icon a:hover{
+    opacity:1;
+    transition:opacity 100ms;
+}
+
+.sample{
+    height:1000px;
+    width:100px;
+}
+
+#megaMenu{
+    width: 100%;
+    opacity: 0.9;
+}
+
+#megaMenu div{
+    display: none;
+}
+
+.top--slide ul li img{
+    /*width:18%;*/
+}
+
+.slider{
+    margin: 100px auto;
+    width: 100%;
+}
+.slider img{
+    height: auto;
+    width: 90%;
+}
+
+.slick-center{
+margin-right:20px;
+margin-left:20px;
+}
+
+
+
+

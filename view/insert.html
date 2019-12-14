@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../common/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="../common/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>金箔サイト 管理者画面</title>
+</head>
+<body>
+    <h1>商品の登録</h1>
+    <h2>商品情報</h2>
+
+    <form action="insert.php" method="post">
+      
+        <table class="searchTbl">
+            <tr>
+                <th>ID</th>
+                <td>IDは自動で番号がつきます</td>
+            </tr>
+            <tr>
+                <th>商品名</th>
+                <td>
+                    <input type="text" name="name" value="<?= $sName ?>"><br />
+                    <span class="err"><?= isset($arrErr['name']) ? $arrErr['name'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>価格</th>
+                <td>
+                    <input type="text" name="price" value="<?= $sPrice ?>"><br />
+                    <span class="err"><?= isset($arrErr['price']) ? $arrErr['price'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>在庫</th>
+                <td>
+                    <input type="text" name="inventory" value="<?= $sInventory ?>"><br />
+                    <span class="err"><?= isset($arrErr['inventory']) ? $arrErr['inventory'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>タグ</th>
+                <td>
+                    <input type="text" name="tag" value="<?= $sTag ?>"><br />
+                    <span class="err"><?= isset($arrErr['tag']) ? $arrErr['tag'] : "" ?></span>
+                </td>
+            </tr>
+        </table>
+
+        <div class="btnArea">
+            <input type="submit" value="入力確認">
+            <input type="hidden" name="step" value="1" />
+        </div>
+    </form>
+
+    <a href="index.php">トップページへ戻る</a><br />
+
+</body>
+</html>
