@@ -165,15 +165,18 @@
 });
 
 
-    
 
     
+    $(".tip1").css({
+        height:$(window).width()*35/100,
+    });
+
     // setInterval(function(){
     //     navTop=$("#nav").offset().top;
     //     console.log(navTop);
     // },500)
     
     window.onload=function(){
-        console.log(navH/5);
+        console.log();
 
     }

@@ -60,7 +60,11 @@
             <?php foreach($arrResult as $item){ ?>
             <tr>
                 <td><?= $item['id'] ?></td>
-                <!--<td><?= $item['image'] ?></td>-->
+                <?php
+                    $img = imagecreatefromstring($item['image'])
+
+                ?>
+                <td><img src=<?= imagecreatefromstring($item['image']) ?> alt="image01"> /td>
                 <td><?= $item['name'] ?></td>
                 <td>￥<?= $item['price'] ?></td>
                 <td><?= $item['inventory'] ?>　個</td>

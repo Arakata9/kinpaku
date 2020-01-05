@@ -14,7 +14,7 @@
 .navbar-brand-center {
     position: absolute;
     width: 100%;
-    left: 0.5%;
+    left: 0%;
     top: 0;
     text-align:center;
     margin: auto;
@@ -39,13 +39,6 @@
     font-size: 0.8rem;
 }
 
-.navbar-brand{
-    font-family: "Renner*";
-     z-index:5;
-}
-
-
-
 .text-decoration-none{
     text-decoration: none;
 }
@@ -55,18 +48,28 @@
     width:100%;
     background: linear-gradient( rgba(34, 34, 34, 0.8),rgba(0, 0, 0, 0));
     transition: background-color 250ms;
-
+    z-index:1000;
 }
+
 
 .nav--wrapper:hover > #nav{
     transition: background-color 250ms;
 }
 
+.navbar-kinpaku{
+    color:#F4EAB9;
+    font-family: "Renner*";
+    z-index:5;
+}
 
 .nav--ul{
-    padding-top:43px;
+    padding-top:50px;
     z-index: 2;
+    /*width:30%;*/
+    
 }
+
+
 
 
 
@@ -107,6 +110,7 @@
 #megaMenu{
     width: 100%;
     opacity: 0.9;
+    z-index: 1000;
 }
 
 #megaMenu div{
@@ -114,7 +118,7 @@
 }
 
 .top--slide ul li img{
-    /*width:18%;*/
+    z-index:-1;
 }
 
 .slider{
@@ -123,14 +127,38 @@
 }
 .slider img{
     height: auto;
-    width: 90%;
+    width: 80%;
 }
 
 .slick-center{
-margin-right:20px;
-margin-left:20px;
+margin-right:30px;
+margin-left:30px;
 }
 
+/*記事*/
+.top--article{
+    margin-top:100px;
+}
+
+.tip1{
+    width:45%;
+
+    margin-left:8%;
+    background-color: #eee;
+    font-family:"Ryumin Light KL" ;
+}
+
+.tip1 h1{
+    margin-top:160px;
+}
+.tip1 h2{
+    margin-top: 10px;
+}
+
+.top--article--img1{
+    width:35%;
+    margin-left:5% ;
+}
 
 
 

@@ -100,7 +100,7 @@ function insertMember($sPrice, $sName, $sInventory, $sTag){
 		//例外が発生したらエラーを出力
 		die('実行エラー :' . $Exception->getMessage()."<br />");
 	
-		//登録失敗���返却
+		//登録失敗����返却
 		return false;
 
 	}

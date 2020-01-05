@@ -1,0 +1,12 @@
+.item--list{
+    margin-top:5%;
+    margin-left: 5%;
+    flex-wrap:wrap;
+    justify-content: center;
+    justify-content: space-between;
+    align-content: space-around;
+}
+
+.item--price{
+    float:right;
+}
