@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/front.css">
+    <link rel="stylesheet" href="../assets/css/item.css">    
+    <link rel="stylesheet" href="https://indestructibletype-fonthosting.github.io/renner.css" type="text/css" charset="utf-8" />
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5df596b32a704ba49f3671deac1e0217" charset="utf-8"></script>
+    <title>kin-paku |　商品一覧</title>
+</head>
+<body>
+  <section class="nav--wrapper">
+    <nav id="nav1" class="navbar navbar-expand-lg navbar-dark p-0 navh" >
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="mt-1">
+          <a class="navbar-kinpaku" href="#"><h1 class="m-auto w-100 mt-1  navbar-brand-center">kin-paku</h1></a>
+        </div>
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav m-auto  mt-lg-0 h7 nav--ul">
+          <li class="nav-item active">
+            <a class="nav-link px-5  nav--li--new" href="#">新着</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--acc" href="#">アクセサリー</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--table" href="#">テーブルウェア</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--interior" href="#">インテリア</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--fashion" href="#">ファッション</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--food" href="#">食品</a>
+          </li>
+        </ul>
+    
+        <div class="nav--icon">
+          <a class="px-2 mx-2" href="#"><i class="fas fa-search text-light"></i></a>
+          <a class="px-2 mx-2" href="#"><i class="fas fa-user-circle text-light"></i></a>
+          <a class="pl-2 ml-2" href="#"><i class="fas fa-cart-arrow-down text-light"></i></a>
+        </div>
+    
+      </div>
+    </nav>
+    <div id="megaMenu"  class="bg-light position-fixed">
+      <div class="nav--mega--new">新着</div>
+      <div class="nav--mega--acc">アクセサリ</div>
+      <div class="nav--mega--table">テーブルウェア</div>
+      <div class="nav--mega--interior">インテリア</div>
+      <div class="nav--mega--fashion">ファッション</div>
+      <div class="nav--mega--food">食品</div>
+    </div>
+    </section>
+    
+    <div class="bg-white white-box"></div>
+
+    
+    <section class="item--list d-flex">
+
+    <!--ここからfor文で回す-->
+        
+        <?php foreach($arrResult as $item){ ?>
+            <tr>
+                <!--<td><?= $item['id'] ?></td>-->
+                <?php
+                    if(isset($item['image'])){
+                        $uri = "data:image/jpg;base64," . base64_encode($item['image']);
+                    }
+                    else{
+                        $uri = "../assets/images/NOIMAGE.jpeg";
+                    }
+                ?>
+                <div class="card mr-4 mb-4" style="width: 18rem;">
+                  <a href="itemDetail.php?id=<?= $item['id'] ?>"><img class="card-img-top img--obfit" src="<?= $uri ?>" alt="商品イメージ"></a>
+                  <div class="card-body">
+                    <h5 class="d-inline" style='font-family:"Ryumin Light KL"'><?= $item['name'] ?></h5>
+                    <span class="item--price" style='font-family: "Renner*"'>¥<?= $item['price'] ?></span>
+                  </div>
+                </div>
+              </tr>
+        <?php } ?>
+    <!--ここまで-->
+        
+    </section>
+    
+    <script src="../assets/js/main.js"></script>    
+</body>
+</html>

@@ -26,6 +26,19 @@
                     <input type="hidden" name="name" value="<?= $sName ?>">
                 </td>
             </tr>
+            <th>画像</th>
+                <td>
+                    <?php
+                    if(isset($sImage)){
+                        $uri = "data:image/jpg;base64," . base64_encode($sImage);
+                    }
+                    else{
+                        $uri = "../assets/images/NOIMAGE.jpeg";
+                    }
+                    ?>
+                    <img class="tag--img" src=<?= $uri ?> alt="商品イメージ">
+                    <input type="hidden" name="image" value="<?= $uri ?>"><br />
+                </td>
             <tr>
                 <th>名前</th>
                 <td>

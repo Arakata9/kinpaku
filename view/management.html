@@ -7,6 +7,13 @@
     <link href="../common/css/main.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <title>金箔サイト 管理者画面</title>
+    <style>
+        .tag--img{
+            width:40px;
+            height:40px;
+        }
+    </style>
+    
 </head>
 <body class="p-0 bg-light">
     <nav class="site-header sticky-top py-1" style="background-color:#333;">
@@ -61,10 +68,14 @@
             <tr>
                 <td><?= $item['id'] ?></td>
                 <?php
-                    $img = imagecreatefromstring($item['image'])
-
+                    if(isset($item['image'])){
+                        $uri = "data:image/jpg;base64," . base64_encode($item['image']);
+                    }
+                    else{
+                        $uri = "../assets/images/NOIMAGE.jpeg";
+                    }
                 ?>
-                <td><img src=<?= imagecreatefromstring($item['image']) ?> alt="image01"> /td>
+                <td><img class="tag--img" src=<?= $uri ?> alt="OO"> </td>
                 <td><?= $item['name'] ?></td>
                 <td>￥<?= $item['price'] ?></td>
                 <td><?= $item['inventory'] ?>　個</td>

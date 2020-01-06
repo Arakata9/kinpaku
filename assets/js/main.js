@@ -1,4 +1,4 @@
-    var navH = $("#nav").height();
+    var navH = $(".navh").height();
 
     $("#top--img").css({
         marginTop:-navH,

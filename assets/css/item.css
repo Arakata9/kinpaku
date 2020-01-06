@@ -1,12 +1,47 @@
 .item--list{
-    margin-top:5%;
-    margin-left: 5%;
+    margin-left: 8%;
+    width:88%;
     flex-wrap:wrap;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: start;
     align-content: space-around;
+}
+
+.img--obfit{
+    width: 286px;
+	height: 250px;
+	object-fit: cover;
 }
 
 .item--price{
     float:right;
+}
+
+
+.item--detail--img{
+    width:600px;
+}
+
+.item--detail--main{
+    width:800px;
+}
+
+.item--detail--sel{
+    width:50px;
+}
+
+.item--detail--add{
+    font-size: 1.5rem;
+}
+
+.white-box{
+    height:200px;
+}
+
+.btn-box{
+    height:50px;
+}
+
+.cart--confirm{
+    font-size:1.5rem;
 }

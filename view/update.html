@@ -12,7 +12,7 @@
     <h1>商品の更新</h1>
     <h2>商品情報</h2>
   
-    <form action="update.php" method="post">
+    <form action="update.php" enctype="multipart/form-data" method="post">
 
         <table class="searchTbl">
             <tr>
@@ -27,6 +27,22 @@
                 <td>
                     <input type="text" name="name" value="<?= $sName ?>"><br />
                     <span class="err"><?= isset($arrErr['name']) ? $arrErr['name'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>画像</th>
+                <td>
+                    <?php
+                    if(isset($sImage)){
+                        $uri = "data:image/jpg;base64," . base64_encode($sImage);
+                    }
+                    else{
+                        $uri = "../assets/images/NOIMAGE.jpeg";
+                    }
+                    ?>
+                    <img class="tag--img" src=<?= $uri ?> alt="商品イメージ"><br />
+                    <input type="file" name="image" accept="image/jpeg" value=""><br />
+                    <span class="err"><?= isset($arrErr['image']) ? $arrErr['image'] : "" ?></span>
                 </td>
             </tr>
             <tr>

@@ -69,15 +69,15 @@ function selectMember($sItemId = "", $sName = ""){
  * $sPrice：価格
  * $sName：商品名
  ****************************************/
-function insertMember($sPrice, $sName, $sInventory, $sTag){
+function insertMember($sPrice, $sName, $sInventory, $sImage ,$sTag){
 
 	//データベース接続関数の呼び出し
 	$pdo = db_connect();
 
 	try {
 		//データ検索の条件
-		$sql = "INSERT INTO items (name, price, inventory, tag)
-				VALUES (:name, :price, :inventory, :tag)";
+		$sql = "INSERT INTO items (name, price, inventory, image, tag)
+				VALUES (:name, :price, :inventory, :image, :tag)";
 		
 		//ステートメントハンドラを作成
 		$stmh = $pdo->prepare($sql);
@@ -86,6 +86,7 @@ function insertMember($sPrice, $sName, $sInventory, $sTag){
 		$stmh->bindValue(':name',  $sName,  PDO::PARAM_STR);
 		$stmh->bindValue(':price', $sPrice, PDO::PARAM_STR);
 		$stmh->bindValue(':inventory', $sInventory, PDO::PARAM_STR);
+		$stmh->bindValue(':image', $sImage, PDO::PARAM_LOB);
 		$stmh->bindValue(':tag', $sTag, PDO::PARAM_STR);
 		
 		//SQL文の実行
@@ -113,7 +114,7 @@ function insertMember($sPrice, $sName, $sInventory, $sTag){
  * $sPrice：価格
  * $sName：商品名
  ****************************************/
-function updateMember($sItemId, $sPrice, $sName, $sInventory, $sTag){
+function updateMember($sItemId, $sPrice, $sName, $sInventory, $sImage, $sTag){
 
 	//データベース接続関数の呼び出し
 	$pdo = db_connect();
@@ -126,6 +127,7 @@ function updateMember($sItemId, $sPrice, $sName, $sInventory, $sTag){
 					name = :name, 
 				    price = :price,
 				    inventory = :inventory,
+					image = :image,
 				    tag = :tag
 				WHERE
 					id = :id
@@ -139,6 +141,7 @@ function updateMember($sItemId, $sPrice, $sName, $sInventory, $sTag){
 		$stmh->bindValue(':name',  $sName,  PDO::PARAM_STR);
 		$stmh->bindValue(':price', $sPrice, PDO::PARAM_STR);
 		$stmh->bindValue(':inventory', $sInventory, PDO::PARAM_STR);
+		$stmh->bindValue(':image', $sImage);
 		$stmh->bindValue(':tag', $sTag, PDO::PARAM_STR);
 		
 		//SQL文の実行

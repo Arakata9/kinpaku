@@ -23,6 +23,9 @@ error_reporting(E_ALL);
 //**************************************************
 // 変数取得
 //**************************************************
+
+    $nStepFlg = isset($_POST['step']) ? $_POST['step'] : "";
+
     //ID
     $sItemId = isset($_POST['id']) ? $_POST['id'] : "";
 
@@ -34,12 +37,27 @@ error_reporting(E_ALL);
     
      //在庫
     $sInventory = isset($_POST['inventory']) ? $_POST['inventory'] : "";
+
+    if($nStepFlg == 2){
+        $sImage = isset($_POST['image']) ? $_POST['image'] : null;
+    }
+    else{
+        if(!empty($_FILES['image'])  && !empty($_FILES['image']['name'])){
+            $fp = fopen($_FILES['image']['tmp_name'], "rb");
+            $sImage = fread($fp, filesize($_FILES['image']['tmp_name']));
+            fclose($fp);
+        }
+        else{
+            $itemArr = selectMember($sItemId);
+            $sImage = $itemArr[0]['image'];
+        }
+    }
+
     
      //タグ
     $sTag = isset($_POST['tag']) ? $_POST['tag'] : "";
 
     //処理ステップ
-    $nStepFlg = isset($_POST['step']) ? $_POST['step'] : "";
 
 
 //**************************************************
@@ -57,6 +75,8 @@ error_reporting(E_ALL);
         
         //在庫
         $sInventory = $arrResult[0]['inventory'];
+
+        $sImage = $arrResult[0]['image'];
         
         //タグ
         $sTag = $arrResult[0]['tag'];
@@ -103,9 +123,9 @@ error_reporting(E_ALL);
 // STEP2（完了画面）
 //**************************************************
     if($nStepFlg == 2 && count($arrErr) == 0){
-
+        $imageBinary = file_get_contents($sImage);
         //データ登録
-        $bRet = updateMember($sItemId, $sPrice, $sName,$sInventory,$sTag);
+        $bRet = updateMember($sItemId, $sPrice, $sName,$sInventory, $imageBinary, $sTag);
 
         //DB登録エラーがある場合は最初のステップに戻す
         if($bRet == false){

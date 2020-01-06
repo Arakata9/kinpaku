@@ -12,7 +12,7 @@
     <h1>商品の登録</h1>
     <h2>商品情報</h2>
 
-    <form action="insert.php" method="post">
+    <form action="insert.php" enctype="multipart/form-data" method="post">
       
         <table class="searchTbl">
             <tr>
@@ -27,8 +27,24 @@
                 </td>
             </tr>
             <tr>
-                <th>価格</th>
+                <th>画像</th>
                 <td>
+                    <?php
+                    if(isset($sImage)){
+                        $uri = "data:image/jpg;base64," . base64_encode($sImage);
+                    }
+                    else{
+                        $uri = "../assets/images/NOIMAGE.jpeg";
+                    }
+                    ?>
+                    <img class="tag--img" src=<?= $uri ?> alt="商品イメージ"><br />
+                    <input type="file" name="image" accept="image/jpeg" value=""><br />
+                    <span class="err"><?= isset($arrErr['image']) ? $arrErr['image'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>価格</th>
+                <td>    
                     <input type="text" name="price" value="<?= $sPrice ?>"><br />
                     <span class="err"><?= isset($arrErr['price']) ? $arrErr['price'] : "" ?></span>
                 </td>

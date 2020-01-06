@@ -30,7 +30,7 @@
 //**************************************************
     //画面へ表示
     if(count($arrResult) > 0){
-        require_once('../view/management.html');
+        require_once('../view/index.html');
     } else {
         require_once('../view/none.html');
     }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/front.css">
+    <link rel="stylesheet" href="../assets/css/item.css">
+    <link rel="stylesheet" href="https://indestructibletype-fonthosting.github.io/renner.css" type="text/css" charset="utf-8" />
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?5df596b32a704ba49f3671deac1e0217" charset="utf-8"></script>
+    <title>kin-paku | オンラインストア</title>
+</head>
+<body class="bg-light">
+  <section class="nav--wrapper">
+    <nav id="nav" class="navbar navbar-expand-lg navbar-dark p-0 navh" >
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+              
+        <div class="mt-1">
+          <a class="navbar-kinpaku" href="/kinpakuEC/ctrl/index.php"><h1 class="m-auto w-100 mt-1  navbar-brand-center">kin-paku</h1></a>
+        </div>
+
+      
+    
+      <!--<div class="p-5 bg-secondary"><i class="fas fa-search"></i></div>-->
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav m-auto  mt-lg-0 h7 nav--ul">
+          <li class="nav-item active">
+            <a class="nav-link px-5  nav--li--new" href="#">新着</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--acc" href="#">アクセサリー</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--table" href="#">テーブルウェア</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--interior" href="#">インテリア</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--fashion" href="#">ファッション</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link px-5 nav--li--food" href="#">食品</a>
+          </li>
+        </ul>
+        
+
+
+        
+        <div class="nav--icon">
+          <a class="px-2 mx-2" href="#"><i class="fas fa-search text-light"></i></a>
+          <a class="px-2 mx-2" href="#"><i class="fas fa-user-circle text-light"></i></a>
+          <a class="pl-2 ml-2" href="#"><i class="fas fa-cart-arrow-down text-light"></i></a>
+        </div>
+
+        <!--<form class="form-inline my-2 my-lg-0">-->
+        <!--  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+        <!--  <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>-->
+        <!--</form>-->
+      </div>
+    </nav>
+    <div id="megaMenu"  class="bg-light position-fixed">
+      <div class="nav--mega--new">新着</div>
+      <div class="nav--mega--acc">アクセサリ</div>
+      <div class="nav--mega--table">テーブルウェア</div>
+      <div class="nav--mega--interior">インテリア</div>
+      <div class="nav--mega--fashion">ファッション</div>
+      <div class="nav--mega--food">食品</div>
+    </div>
+  </section>
+    
+    <section class="top">
+        <img id="top--img" src="../assets/images/cache_b6d78aa7-eadb-407b-c0ed-120e19733089.png" alt="トップ" style="width:100%">
+    </section>
+    
+    <section class="top--slide">
+      <ul class="slider my-5">
+        <li><a href="#"><img src="../assets/images/kinpaku_item5.jpeg" alt="image01"></a></li>
+        <li><a href="#"><img src="../assets/images/kinpaku_item1.jpeg" alt="image02"></a></li>
+        <li><a href="#"><img src="../assets/images/kinpaku_item4.jpeg" alt="image03"></a></li>
+        <li><a href="#"><img src="../assets/images/kinpaku_item2.jpeg" alt="image04"></a></li>
+        <li><a href="#"><img src="../assets/images/kinpaku_item7.jpeg" alt="image05"></a></li>
+        <li><a href="#"><img src="../assets/images/kinpaku_item6.jpeg" alt="image06"></a></li>
+        <li><a href="#"><img src="../assets/images/kinpaku_item3.jpeg" alt="image07"></a></li>
+      </ul>
+    </section>
+    
+    <section class="top--article d-flex pb-5">
+      <div class="tip1 text-dark text-center">
+        <h1>金箔が舞う</h1>
+        <h2>楽しい仕掛けのお箸</h2>
+      </div>
+      <img class="top--article--img1" src="../assets/images/kinpaku_item8.jpg" alt="お箸">
+    </section>
+    
+    <section class="item--list d-flex mt-5">
+
+    <!--ここからfor文で回す-->
+        
+    <?php foreach($arrResult as $item){ ?>
+      <tr>
+          <!--<td><?= $item['id'] ?></td>-->
+          <?php
+              if(isset($item['image'])){
+                  $uri = "data:image/jpg;base64," . base64_encode($item['image']);
+              }
+              else{
+                  $uri = "../assets/images/NOIMAGE.jpeg";
+              }
+          ?>
+          <div class="card mr-4 mb-4" style="width: 18rem;">
+            <a href="itemDetail.php?id=<?= $item['id'] ?>"><img class="card-img-top img--obfit" src="<?= $uri ?>" alt="商品イメージ"></a>
+            <div class="card-body">
+              <h5 class="d-inline" style='font-family:"Ryumin Light KL"'><?= $item['name'] ?></h5>
+              <span class="item--price" style='font-family: "Renner*"'>¥<?= $item['price'] ?></span>
+            </div>
+          </div>
+        </tr>
+  <?php } ?>
+<!--ここまで-->
+        
+    </section>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/ani.js"></script>
+</body>
+</html>
