@@ -9,8 +9,8 @@
     <title>金箔サイト 管理者画面</title>
 </head>
 <body>
-    <h1 class="notice">メンバーの削除</h1>
-    <h2>メンバー情報</h2>
+    <h1 class="notice">商品の削除</h1>
+    <h2>商品情報</h2>
   
 
     <form action="delete.php" method="post">
@@ -50,13 +50,13 @@
         </table>
 
         <div class="btnArea clearfix">
-            <input type="button" class="btn" value="中止" onclick="javascript:history.back();">
-            <input type="submit" class="btn" value="削除">
+            <input type="button" class="btn btn-primary" value="中止" onclick="javascript:history.back();">
+            <input type="submit" class="btn btn-outline-danger" value="削除">
             <input type="hidden" name="step" value="1" />
         </div>
     </form>
   
-    <a href="index.php">トップページへ戻る</a><br />
+    <a href="management.php">トップページへ戻る</a><br />
 
 </body>
 </html>

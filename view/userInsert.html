@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../common/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="../common/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>金箔サイト 管理者画面</title>
+</head>
+<body>
+    <h1>商品の登録</h1>
+    <h2>商品情報</h2>
+
+    <form action="userInsert.php" enctype="multipart/form-data" method="post">
+      
+        <table class="searchTbl">
+            <tr>
+                <th>ID</th>
+                <td>IDは自動で番号がつきます</td>
+            </tr>
+            <tr>
+                <th>名前</th>
+                <td>
+                    <input type="text" name="userName" value="<?= $sUserName ?>"><br />
+                    <span class="err"><?= isset($arrErr['userName']) ? $arrErr['userName'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>メールアドレス</th>
+                <td>    
+                    <input type="text" name="mail" value="<?= $sMail ?>"><br />
+                    <span class="err"><?= isset($arrErr['mail']) ? $arrErr['mail'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>パスワード</th>
+                <td>    
+                    <input type="text" name="password" value="<?= $sPassword ?>"><br />
+                    <span class="err"><?= isset($arrErr['password']) ? $arrErr['password'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>住所</th>
+                <td>
+                    <input type="text" name="address" value="<?= $sAddress ?>"><br />
+                    <span class="err"><?= isset($arrErr['address']) ? $arrErr['address'] : "" ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>
+                    <input type="text" name="tel" value="<?= $sTel ?>"><br />
+                    <span class="err"><?= isset($arrErr['tel']) ? $arrErr['tel'] : "" ?></span>
+                </td>
+            </tr>
+        </table>
+
+        <div class="btnArea">
+            <input type="submit" value="入力確認">
+            <input type="hidden" name="step" value="1" />
+        </div>
+    </form>
+
+    <a href="userManage.php">トップページへ戻る</a><br />
+
+</body>
+</html>

@@ -78,15 +78,15 @@
             <h1 class="mt-3"><?= $selectItem['name'] ?><h1>
             <div class="mt-3">
               <h5 class="d-inline">価格</h5>
-              <h4 class="d-inline">\<?= $selectItem['price'] ?></h4>
+              <h4 class="d-inline"><?= $selectItem['price'] ?>円</h4>
             </div>
             <div class="item--detail--sel mt-4">
               <div class="form-group">
                   <select class="form-control" id="exampleFormControlSelect1">
                     <!--ここから在庫の数forループ-->
-                    <option><?= $selectItem['inventory'] ?></option>
-                    <!--<option>2</option>-->
-                    <!--<option>3</option>-->
+                    <?php for($i=$selectItem['inventory'];$i>0;$i--){ ?>
+                      <option><?= $i ?></option>
+                    <?php } ?>
                     
                   </select>
               </div>

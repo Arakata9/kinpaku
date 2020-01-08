@@ -6,23 +6,13 @@
     require_once('../model/dbconnect.php');
 
     //データベース操作関数の定義ファイルを読み込み
-    require_once('../model/dbfunction.php');
-
-//**************************************************
-// 変数取得
-//**************************************************
-    //ID
-    $sItemId = isset($_POST['id']) ? $_POST['id'] : "";
-
-    //商品名
-    $sName = isset($_POST['name']) ? $_POST['name'] : "";
-
+    require_once('../model/dbusers.php');
 
 //**************************************************
 // 検索処理
 //**************************************************
     //値を取得
-    $arrResult = selectMember($sItemId, $sName);
+    $arrResult = selectUser("", "");
 
 //**************************************************
 // HTMLを出力
